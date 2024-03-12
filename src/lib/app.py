@@ -64,6 +64,7 @@ def initialize_marker_3d(pts_2d_df, marker, k_arr, d_arr, r_arr, t_arr, dlc_thre
         pts_2d_df[pts_2d_df['likelihood'] > dlc_thresh],
         k_arr, d_arr, r_arr, t_arr, triangulate_points_fisheye
     )
+    print(f'Here is pts_3d_df: {pts_3d_df}')
 
     # the following loop has no real effect currently, but will be essential for when curve_fit can handle NaNs
     pts_3d = np.full((tot_frames, 3), np.nan)

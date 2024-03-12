@@ -87,6 +87,7 @@ def load_dlc_points_as_df(dlc_df_fpaths, verbose=True):
         dlc_df = pd.concat([dlc_df, df], sort=True, ignore_index=True)
 
     dlc_df = dlc_df[['frame', 'camera', 'marker', 'x', 'y', 'likelihood']]
+    dlc_df.to_csv('dlc_df.csv', index=False)
     if verbose:
         print(f'DLC points dataframe:\n{dlc_df}\n')
     return dlc_df
